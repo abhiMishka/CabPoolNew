@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cabpool.DriverActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <AutoCompleteTextView
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/des"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+  
+ 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+       android:layout_marginTop="100dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="250dp"
+        android:layout_height="150dp" 
+        android:layout_marginTop="80dp"
+        android:layout_gravity="end"/>
+ 
+
+       <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content" 
+      android:layout_gravity="end"
+      android:layout_marginTop="230dp"/>
+       
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:text="@string/mot"
+       android:layout_marginTop="230dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />  
+        
+        <Spinner
+      android:id="@+id/spinner2"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content" 
+      android:layout_gravity="end"
+      android:layout_marginTop="310dp"/>
+        
+        
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:text="@string/nof"
+       android:layout_marginTop="310dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="400dp"
+        android:text="@string/submit" />
+
+
+</FrameLayout>
+

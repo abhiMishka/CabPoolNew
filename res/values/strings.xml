@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CabPoolNew</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="facebook_app_id">778213102264255</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_after_login">AfterLogin</string>
+    <string name="title_activity_choose">ChooseActivity</string>
+    <string name="loginaspass">Login As Passenger</string>
+    <string name="loginasdriver">Login As Driver</string>
+    <string name="login">Login</string>
+    <string name="govindpuri">Going to metro Stn??</string>
+    <string name="np">Going to Nehru place??</string>
+    <string name="title_activity_driver">DriverActivity</string>
+    <string name="des">Destination</string>
+    <string name="time">Time</string>
+    <string name="mot">Vehicle Type</string>
+    <string name="nof">Seats Available</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_passenger">PassengerActivity</string>
+    <string name="depTime">Departure Time</string>
+    <string name="nop">Number Of passengers</string>
+    <string name="title_activity_metro">MetroActivity</string>
+    <string name="title_activity_nehru">NehruActivity</string>
+    <string name="title_activity_thankyou">ThankyouActivity</string>
+
+</resources>

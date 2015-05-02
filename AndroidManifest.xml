@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cabpoolnew"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.example.cabpool.CarPoolApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.cabpool.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.cabpool.AfterLogin"
+            android:label="@string/title_activity_after_login" >
+        </activity>
+        <activity android:name="com.example.androidhive.CustomizedListView" >
+        </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.example.cabpool.ChooseActivity"
+            android:label="@string/title_activity_choose" >
+        </activity>
+        <activity
+            android:name="com.example.cabpool.DriverActivity"
+            android:label="@string/title_activity_driver" >
+        </activity>
+        <activity
+            android:name="com.example.cabpool.PassengerActivity"
+            android:label="@string/title_activity_passenger" >
+        </activity>
+        <activity
+            android:name="com.example.cabpool.MetroActivity"
+            android:label="@string/title_activity_metro" >
+        </activity>
+        <activity
+            android:name="com.example.cabpool.NehruActivity"
+            android:label="@string/title_activity_nehru" >
+        </activity>
+        <activity
+            android:name="com.example.cabpoolnew.ThankyouActivity"
+            android:label="@string/title_activity_thankyou" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,49 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkg"
+    tools:context="com.example.cabpool.ChooseActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_marginTop="60dp"
+        android:layout_width="200dp"
+        android:background="#00FFFFFF"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@drawable/driver" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:background="#00FFFFFF"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/pass" />
+    
+        <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="250dp"
+        android:drawableTop="@drawable/gp"
+        android:background="#00FFFFFF"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp"
+        android:background="#00FFFFFF"
+        android:drawableTop="@drawable/np"
+        
+         />
+
+</FrameLayout>
+
