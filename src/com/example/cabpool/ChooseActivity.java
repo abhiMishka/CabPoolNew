@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.cabpoolnew.Profile;
 import com.example.cabpoolnew.R;
 
 public class ChooseActivity extends ActionBarActivity {
@@ -81,13 +82,28 @@ public class ChooseActivity extends ActionBarActivity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+		
+		 switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	OpenSettingsActivity();
+	            return true;
+	        case R.id.profile:
+	        	OpenProfileActivity();
+	            return true;
+	        default:
+	        	Toast.makeText(ChooseActivity.this, Integer.toString(item.getItemId()), Toast.LENGTH_LONG).show();
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 
+	 private void OpenSettingsActivity() {
+		    Intent intent = new Intent(this, PassengerActivity.class);
+		    startActivity(intent);
+		  }
+	 private void OpenProfileActivity() {
+		    Intent intent = new Intent(this, Profile.class);
+		    startActivity(intent);
+		  }
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */

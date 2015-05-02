@@ -13,6 +13,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,11 +91,14 @@ public class MainActivity extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+		 switch (item.getItemId()) {
+	        case R.id.action_settings:
+	            return true;
+	       
+	        default:
+	        	Toast.makeText(MainActivity.this, Integer.toString(item.getItemId()), Toast.LENGTH_LONG).show();
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 	
 	 public void onLoginClick(View v) {

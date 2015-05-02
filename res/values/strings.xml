@@ -24,5 +24,6 @@
     <string name="title_activity_metro">MetroActivity</string>
     <string name="title_activity_nehru">NehruActivity</string>
     <string name="title_activity_thankyou">ThankyouActivity</string>
+    <string name="title_activity_profile">Profile</string>
 
 </resources>

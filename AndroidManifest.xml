@@ -59,6 +59,10 @@
             android:name="com.example.cabpoolnew.ThankyouActivity"
             android:label="@string/title_activity_thankyou" >
         </activity>
+        <activity
+            android:name="com.example.cabpoolnew.Profile"
+            android:label="@string/title_activity_profile" >
+        </activity>
     </application>
 
 </manifest>
