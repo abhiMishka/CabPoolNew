@@ -127,8 +127,9 @@ public class PassengerActivity extends ActionBarActivity implements OnItemSelect
 				
 				vehicle=spinner.getSelectedItem().toString();
 				seats=spinner2.getSelectedItem().toString();	
-				 hour=timePicker1.getCurrentHour();
-					min=timePicker1.getCurrentMinute();
+				hour=timePicker1.getCurrentHour();
+				min=timePicker1.getCurrentMinute();
+				int totalTime = hour*60 + min;
 					// Do something with the time chosen by the user
 					  Toast.makeText(getApplicationContext(), " time :" + Integer.toString(hour) + Integer.toString(min), Toast.LENGTH_SHORT).show();
 				
@@ -136,6 +137,8 @@ public class PassengerActivity extends ActionBarActivity implements OnItemSelect
 						query.whereEqualTo("Destination", driveDestination);
 						query.whereEqualTo("seats", seats);
 						query.whereEqualTo("vehicle", vehicle);
+						query.whereLessThanOrEqualTo("hour", Integer.toString(hour+1));
+						query.whereGreaterThanOrEqualTo("hour", Integer.toString(hour-1));
 						query.findInBackground(new FindCallback<ParseObject>() {
 						    public void done(List<ParseObject> scoreList, ParseException e) {
 						        if (e == null) {
