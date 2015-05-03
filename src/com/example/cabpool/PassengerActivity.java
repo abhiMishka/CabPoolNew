@@ -72,6 +72,7 @@ public class PassengerActivity extends ActionBarActivity implements OnItemSelect
 	  private static final String[]pathsIfBike = {"1"};
 	  private static final String[]pathsIfCar = {"1", "2", "3","4","5"};
 	  private static final String[]transport = {"Car", "Bike"};
+	  public static int seatsRequired = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -127,15 +128,16 @@ public class PassengerActivity extends ActionBarActivity implements OnItemSelect
 				
 				vehicle=spinner.getSelectedItem().toString();
 				seats=spinner2.getSelectedItem().toString();	
+				seatsRequired = Integer.parseInt(seats);
 				hour=timePicker1.getCurrentHour();
 				min=timePicker1.getCurrentMinute();
 				int totalTime = hour*60 + min;
 					// Do something with the time chosen by the user
-					  Toast.makeText(getApplicationContext(), " time :" + Integer.toString(hour) + Integer.toString(min), Toast.LENGTH_SHORT).show();
+					 // Toast.makeText(getApplicationContext(), " time :" + Integer.toString(hour) + Integer.toString(min), Toast.LENGTH_SHORT).show();
 				
 					  ParseQuery<ParseObject> query = ParseQuery.getQuery("Driver");
 						query.whereEqualTo("Destination", driveDestination);
-						query.whereEqualTo("seats", seats);
+						query.whereGreaterThanOrEqualTo("seats", seats);
 						query.whereEqualTo("vehicle", vehicle);
 						query.whereLessThanOrEqualTo("hour", Integer.toString(hour+1));
 						query.whereGreaterThanOrEqualTo("hour", Integer.toString(hour-1));

@@ -19,7 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cabpool.ChooseActivity;
+import com.example.cabpool.DriverActivity;
 import com.example.cabpool.MainActivity;
+import com.example.cabpool.PassengerActivity;
+import com.example.cabpoolnew.DriverInfoPage;
 import com.example.cabpoolnew.R;
 import com.example.cabpoolnew.ThankyouActivity;
 import com.parse.GetCallback;
@@ -55,6 +58,8 @@ public class LazyAdapter extends BaseAdapter {
         return position;
     }
     
+    
+    public static String driverObjectId;
     public View getView(final int position, View convertView, ViewGroup parent) {
         View vi=convertView;
         if(convertView==null)
@@ -105,16 +110,17 @@ public class LazyAdapter extends BaseAdapter {
 						  public void done(ParseObject parseData, ParseException e) {
 							  
 							  Log.d("objectId",parseData.getObjectId());
+							  driverObjectId = parseData.getObjectId();
 							  final int seatsAvailable = Integer.parseInt(parseData.getString(Util.SEATS));
-						    if (e == null && seatsAvailable>0) {
+							  if (e == null && seatsAvailable>0) {
 						     
-						      
-						      String currentMembers=parseData.getString("members");
-						      parseData.put(Util.SEATS, Integer.toString(seatsAvailable-1));
-						      parseData.put("members",currentMembers +"," +MainActivity.firstName);
-						      parseData.saveInBackground();
-						      
-						      
+
+								  String currentMembers=parseData.getString("members");
+								  parseData.put(Util.SEATS, Integer.toString(seatsAvailable-PassengerActivity.seatsRequired));
+								  parseData.put("members",currentMembers +"," +MainActivity.firstName);
+								  parseData.saveInBackground();
+
+
 						      new Thread(new Runnable() {
 								
 								@Override
@@ -123,8 +129,8 @@ public class LazyAdapter extends BaseAdapter {
 //									ParseObject Driver = new ParseObject("Driver");	
 //									Driver.put("Members", MainActivity.firstName);
 //									Driver.saveInBackground();
-									 artist.setText("Available seats : " +(seatsAvailable-1));
-									 thankyouActivity(v);
+									 artist.setText("Available seats : " +(seatsAvailable-PassengerActivity.seatsRequired));
+									 DriverInfoActivity(v);
 									// pd.dismiss();
 								}
 							}).run();
@@ -148,8 +154,8 @@ public class LazyAdapter extends BaseAdapter {
         return vi;
     }
     
-    private void thankyouActivity(View v) {
-	    Intent intent = new Intent(v.getContext(), ThankyouActivity.class);
+    private void DriverInfoActivity(View v) {
+	    Intent intent = new Intent(v.getContext(), DriverInfoPage.class);
 	    v.getContext().startActivity(intent);
 	  }
 }

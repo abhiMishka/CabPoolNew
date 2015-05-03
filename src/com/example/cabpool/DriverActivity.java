@@ -141,6 +141,7 @@ public class DriverActivity extends ActionBarActivity implements OnItemSelectedL
 			Driver.put("minute", Integer.toString(min));
 			Driver.put("vehicle", vehicle);
 			Driver.put("seats", seats);
+			Driver.put("owner", MainActivity.firstName);
 			Log.d("Yayyyy Data Sent!!!",driveDestination);
 			Toast.makeText(getApplicationContext(), "Data Sent", Toast.LENGTH_LONG).show();
 				
